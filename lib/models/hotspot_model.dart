@@ -1,39 +1,3 @@
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
-
-class DatabaseProvider {
-  static Database? _database;
-
-  static Future<Database> get database async {
-    if (_database != null) return _database!;
-
-    _database = await initializeDatabase();
-    return _database!;
-  }
-
-  static Future<Database> initializeDatabase() async {
-    final String databasePath = await getDatabasesPath();
-    final String path = join(databasePath, 'tourist_hotspots.db');
-
-    return await openDatabase(
-      path,
-      version: 1,
-      onCreate: (db, version) async {
-        await db.execute('''
-          CREATE TABLE hotspots(
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT,
-            category TEXT,
-            description TEXT,
-            location TEXT,
-            imageUrl TEXT
-          )
-        ''');
-      },
-    );
-  }
-}
-
 class TouristHotspot {
   final int id;
   final String name;
