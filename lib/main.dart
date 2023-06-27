@@ -185,7 +185,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 left: 28,
                 top: 576,
                 child: Text(
-                  'Catagories',
+                  'Categories',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 20,
@@ -788,7 +788,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             left: 0,
                             top: 60,
                             child: Text(
-                              'Churchs',
+                              'Churches',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 12,
