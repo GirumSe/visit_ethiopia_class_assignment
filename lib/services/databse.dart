@@ -27,7 +27,9 @@ class DatabaseProvider {
             category TEXT,
             description TEXT,
             location TEXT,
-            imageUrl TEXT
+            imageUrl TEXT, 
+            rate TEXT,
+            comments TEXT
           )
         ''');
       },
@@ -44,13 +46,14 @@ class HotspotDao {
 
     return List.generate(maps.length, (index) {
       return TouristHotspot(
-        id: maps[index]['id'],
-        name: maps[index]['name'],
-        category: maps[index]['category'],
-        description: maps[index]['description'],
-        location: maps[index]['location'],
-        imageUrl: maps[index]['imageUrl'],
-      );
+          id: maps[index]['id'],
+          name: maps[index]['name'],
+          category: maps[index]['category'],
+          description: maps[index]['description'],
+          location: maps[index]['location'],
+          imageUrl: maps[index]['imageUrl'],
+          rate: maps[index]['rate'],
+          comments: maps[index]['comments']);
     });
   }
 
@@ -71,6 +74,8 @@ class HotspotDao {
         description: maps[index]['description'],
         location: maps[index]['location'],
         imageUrl: maps[index]['imageUrl'],
+        rate: maps[index]['rate'],
+        comments: maps[index]['comments'],
       );
     });
   }
@@ -85,13 +90,14 @@ class HotspotDao {
 
     return List.generate(maps.length, (index) {
       return TouristHotspot(
-        id: maps[index]['id'],
-        name: maps[index]['name'],
-        category: maps[index]['category'],
-        description: maps[index]['description'],
-        location: maps[index]['location'],
-        imageUrl: maps[index]['imageUrl'],
-      );
+          id: maps[index]['id'],
+          name: maps[index]['name'],
+          category: maps[index]['category'],
+          description: maps[index]['description'],
+          location: maps[index]['location'],
+          imageUrl: maps[index]['imageUrl'],
+          rate: maps[index]['rate'],
+          comments: maps[index]['comments']);
     });
   }
 }
