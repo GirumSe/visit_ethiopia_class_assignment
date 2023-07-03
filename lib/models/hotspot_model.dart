@@ -3,7 +3,8 @@ class TouristHotspot {
   final String name;
   final String category;
   final String description;
-  final String location;
+  final double latitude;
+  final double longitude;
   final String imageUrl;
   final String rate;
   final String comments;
@@ -13,7 +14,8 @@ class TouristHotspot {
       required this.name,
       required this.category,
       required this.description,
-      required this.location,
+      required this.latitude,
+      required this.longitude,
       required this.imageUrl,
       required this.rate,
       required this.comments});

@@ -18,12 +18,12 @@ class MapWidget extends StatelessWidget {
           center: LatLng(latitude, longitude),
           zoom: 15,
         ),
-        layers: [
-          TileLayerOptions(
+        children: [
+          TileLayer(
             urlTemplate: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            subdomains: ['a', 'b', 'c'],
+            subdomains: const ['a', 'b', 'c'],
           ),
-          MarkerLayerOptions(
+          MarkerLayer(
             markers: [
               Marker(
                 point: LatLng(latitude, longitude),
