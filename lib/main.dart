@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:visit_ethiopia/widgets/navbar.dart';
-import 'package:visit_ethiopia/widgets/bnav.dart';
+import 'widgets/navbar.dart';
+import 'widgets/bnav.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Stack(
           children: [
             const Positioned(
-              left: 94,
+              left: 40,
               top: 30,
               child: SizedBox(
                 width: 210,
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 167,
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage("https://via.placeholder.com/395x167"),
+                    image: AssetImage("assets/image15.png"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -146,10 +146,10 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Positioned(
               left: 75,
-              top: 108,
+              top: 40,
               child: SizedBox(
-                width: 258.40,
-                height: 41,
+                width: 380,
+                height: 100,
                 child: Stack(
                   children: [
                     Positioned(
@@ -168,7 +168,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     const Positioned(
                       left: 55.80,
-                      top: 12.23,
+                      top: 10,
                       child: SizedBox(
                         width: 140.79,
                         height: 17.26,
@@ -204,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const Positioned(
               left: 24,
-              top: 250,
+              top: 240,
               child: Text(
                 'Explore Places',
                 style: TextStyle(
@@ -246,7 +246,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             Positioned(
                               left: 0,
-                              top: 0,
+                               top: 0,
                               child: SizedBox(
                                 width: 126,
                                 height: 190,

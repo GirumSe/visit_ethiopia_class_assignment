@@ -1,5 +1,7 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 import 'package:visit_ethiopia/models/hotspot_model.dart';
 
 class DatabaseProvider {
@@ -99,5 +101,36 @@ class HotspotDao {
           rate: maps[index]['rate'],
           comments: maps[index]['comments']);
     });
+  }
+  static Future<void> syncHotspotsFromApi() async {
+    final response = await http.get('YOUR_API_URL');
+    if (response.statusCode == 200) {
+      final List<dynamic> data = json.decode(response.body);
+      final db = await DatabaseProvider.database;
+
+      await db.transaction((txn) async {
+        // Get existing IDs from the local database
+        final List<Map<String, dynamic>> localData = await txn.query(tableName);
+        final Set localIds = localData.map((item) => item['id']).toSet();
+
+        // Iterate over the API data and update/insert records
+        for (final item in data) {
+          final int id = item['id'];
+          if (localIds.contains(id)) {
+            // Update existing record
+            await txn.update(
+              tableName,
+              item,
+              where: 'id = ?',
+              whereArgs: [id],
+            );
+          } else {
+            // Insert new record
+            await txn.insert(tableName, item);
+          }
+        }
+      });
+    } else {throw Exception('Failed to fetch data from the API');
+    }
   }
 }
