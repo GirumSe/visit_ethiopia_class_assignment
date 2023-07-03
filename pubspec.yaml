@@ -43,6 +43,9 @@ dependencies:
   hydrated_bloc: ^8.1.0
   flutter_simple_calculator: ^2.2.0
   http: ^1.1.0
+  latlong2: ^0.9.0
+  flutter_map: ^5.0.0
+  dartleaf: ^1.1.4
 
 dev_dependencies:
   flutter_test:

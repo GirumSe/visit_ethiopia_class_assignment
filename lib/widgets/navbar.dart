@@ -11,16 +11,12 @@ class NavDrawer extends StatelessWidget {
         children: <Widget>[
           const DrawerHeader(
             decoration: BoxDecoration(
-              color: Colors.green,
+              color: Colors.white38,
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage('assets/images/cover.jpg'),
+                image: AssetImage('assets/loo.png'),
               ),
-            ),
-            child: Text(
-              'Side menu',
-              style: TextStyle(color: Colors.white, fontSize: 25),
-            ),
+            ), child: null,
           ),
           ListTile(
             leading: const Icon(Icons.home_rounded),
