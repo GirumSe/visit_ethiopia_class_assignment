@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'widgets/navbar.dart';
 import 'widgets/bnav.dart';
+import 'widgets/catagory_selector.dart';
 
 void main() {
   runApp(const MyApp());
@@ -94,56 +95,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
-            Positioned(
-              left: 33,
-              top: 294,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Historical',
-                    style: TextStyle(
-                      color: Colors.black.withOpacity(0.20000000298023224),
-                      fontSize: 15,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  const SizedBox(width: 18),
-                  Text(
-                    'Most Visited',
-                    style: TextStyle(
-                      color: Colors.black.withOpacity(0.5),
-                      fontSize: 15,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  const SizedBox(width: 18),
-                  Text(
-                    'Popular',
-                    style: TextStyle(
-                      color: Colors.black.withOpacity(0.5),
-                      fontSize: 15,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                  const SizedBox(width: 18),
-                  Text(
-                    'Cities',
-                    style: TextStyle(
-                      color: Colors.black.withOpacity(0.5),
-                      fontSize: 15,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w400,
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const Stack(children: [
+              CategorySelector(),
+            ]),
             Positioned(
               left: 75,
               top: 40,
@@ -246,7 +200,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             Positioned(
                               left: 0,
-                               top: 0,
+                              top: 0,
                               child: SizedBox(
                                 width: 126,
                                 height: 190,
