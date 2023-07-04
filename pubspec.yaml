@@ -45,8 +45,11 @@ dependencies:
   http: ^1.1.0
   latlong2: ^0.9.0
   flutter_map: ^5.0.0
-  dartleaf: ^1.1.4
-
+  bloc: ^8.0.0
+  meta: ^1.1.6
+  flutter_secure_storage: ^5.0.2
+  autocomplete_textfield: ^2.0.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
